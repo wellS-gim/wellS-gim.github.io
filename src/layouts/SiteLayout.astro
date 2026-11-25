@@ -1,0 +1,39 @@
+---
+import '../styles/portfolio.css';
+import 'katex/dist/katex.min.css';
+const { title = 'Robotics & Research', description = 'A personal research portfolio in robotics and locomotion.' } = Astro.props;
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/research/', label: 'Research' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/notes/', label: 'Notes' },
+  { href: '/about/', label: 'About' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0d131e" />
+    <title>{title} | Robotics & Research</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/">ROBOTICS <span> / RESEARCH</span></a>
+        <nav aria-label="Primary navigation">
+          {nav.map(({ href, label }) => <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <span>Robotics & Research · Personal homepage</span>
+        <span>Built with Astro · Hosted on GitHub Pages</span>
+      </div>
+    </footer>
+  </body>
+</html>

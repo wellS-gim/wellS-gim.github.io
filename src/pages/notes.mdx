@@ -1,0 +1,26 @@
+---
+layout: ../layouts/SiteLayout.astro
+title: Notes
+---
+
+<div class="wrap article prose">
+
+<span class="kicker">NOTES</span>
+
+# Technical notes
+
+This page is for research notes, Markdown practice, and LaTeX-style equations.
+
+## A simple PD controller
+
+For a joint with target position $q_d$ and measured position $q$, an example control law is
+
+$$
+\tau = K_p(q_d - q) - K_d\dot{q}.
+$$
+
+Here, $K_p$ is the proportional gain and $K_d$ is the derivative gain.
+
+You can edit this file in **VS Code**, add equations, figures, and links, and then publish them with Git.
+
+</div>
